@@ -64,333 +64,45 @@ var func2 = function (names) {
 func2(['Dima', 'Vlad', 'Kolia']);
 func2(['Oleh', 'Misha', 'Olia']);
 func2(['Ira', 'Vasya', 'Ira']);
-// interface IUser {
-//    name: string,
-//    age: number,
-//    house: number
-// }
-//
-// const user:IUser = {
-//    name: 'Max',
-//    age: 15,
-//    house: 20
-// }
-//
-// const user2:IUser = {
-//    name: 'Oleh',
-//    age: 15,
-//    house: 45
-// }
-// interface IUser<T> {
-//    name: string,
-//    age: number,
-//    house: number,
-//    data:T
-// }
-//
-// const user1:IUser<number[]> = {
-//    name:'Vaasya',
-//    age: 15,
-//    house: 54,
-//    data: [54,58,12]
-// }
-//
-// const user2:IUser<string> = {
-//    name:'Vaasya',
-//    age: 15,
-//    house: 54,
-//    data: '45'
-// }
-// interface IUser {
-//    name?: string,
-//    age?: number,
-//    house?: number
-// }
-//
-// const user:IUser = {
-//
-// }
-// interface IUser {
-//    name: string,
-//    age: number,
-//    house?: number
-// }
-//
-// const user:IUser = {
-//    name:'Vaasya',
-//    age: 15,
-//    house: 44
-// }
-// interface IUser {
-//    name: string,
-//    age: number,
-//    house?: number
-// }
-//
-// const user:Partial<IUser> = {
-//
-// }
-// interface IUser {
-//    name: string,
-//    age: number,
-//    house?: number
-// }
-//
-// const user:Partial<IUser> = {
-//    name:'Vaasya',
-//    age: 15,
-// }
-// class User {
-//    name: string;
-//    age: number
-//
-//    constructor(name: string, age: number) {
-//       this.name = name;
-//       this.age = age;
-//    }
-// }
-//
-// const user = new User('Max', 15);
-//
-// console.log(user);
-// class User {
-//    private name: string;
-//    private age: number
-//
-//    constructor(name: string, age: number) {
-//       this.name = name;
-//       this.age = age;
-//    }
-//    getName():string{
-//       return this.name
-//    }
-// }
-//
-// const user = new User('Max', 15);
-//
-// console.log(user.getName());
-// class User {
-//
-//    constructor(private name: string, private age: number) {
-//    }
-//    getName():string{
-//       return this.name
-//    }
-// }
-//
-// const user = new User('Max', 15);
-//
-// console.log(user.getName());
-// class User {
-//
-//    constructor(protected name: string, protected age: number) {
-//    }
-//    getName():string{
-//       return this.name
-//    }
-// }
-//
-// const user = new User('Max', 15);
-//
-// console.log(user.getName());
-// class User {
-//
-//    constructor(private name: string, private age: number) {
-//    }
-//    getName():string{
-//       return this.name
-//    }
-// }
-//
-// const user = new User('Max', 15);
-//
-// console.log(user.getName());
-//
-// const users:User[] = [
-//    new User('Max', 15),
-//    new User('Kokos', 24)
-// ]
-// interface IElectric {
-//    enginePower:number;
-//
-//    getLedStatus():boolean;
-// }
-//
-// class Car implements IElectric{
-//    enginePower: number;
-//    constructor(private seats:number, private brand:string, private year:number, enginePower: number = 0) {
-//    this.enginePower = enginePower
-//    }
-//
-//
-//     getLedStatus(): boolean {
-//         return true
-//     }
-//
-//    start():void{
-//       console.log('Rrrrrrr');
-//    }
-//
-//    getInfo():void{
-//       console.log(`Brand: ${this.brand} -- seats:${this.seats} -- year:${this.year}`)
-//    }
-// }
-//
-//
-// let car = new Car(5, 'BMW', 2000);
-//
-// car.getInfo()
-// car.start()
-// class ElectroCar extends Car {
-//
-//    constructor(seats:number, brand:string, year:number, private enginePower:number) {
-//       super(seats, brand, year);
-//    }
-//
-// }
-// abstract class Shape {
-//     abstract perimeter():number;
-//
-//     abstract area():number;
-// }
-//
-// class Triangle extends Shape {
-//
-//     constructor(private a:number, private b:number, private c:number) {
-//         super();
-//     }
-//     perimeter(): number {
-//         return this.a * this.b / this.c;
-//     }
-//
-//     area(): number {
-//         return this.c/this.a + this.b;
-//     }
-// }
-//
-// class Rectangle extends Shape {
-//
-//     constructor(private a:number, private b:number) {
-//         super();
-//     }
-//     perimeter(): number {
-//         return this.a + this.b * 2
-//     }
-//
-//     area(): number {
-//         return this.a * this.b
-//     }
-// }
-//
-// const shapes:Shape[] = [
-//     new Triangle(6,5,8),
-//     new Rectangle(5,7),
-//     new Triangle(4,5,9)
-// ];
-//
-// for (let shape of shapes) {
-//     console.log(shape.constructor['name']);
-//     console.log(shape.area());
-//     console.log(shape.perimeter());
-// }
-//LESSON2
-//============================================================================================================
-// interface ITodo {
-//     id:number;
-//     title:string
-// }
-//
-// class NoteBook {
-//     private _todos: ITodo[]
-//
-//     constructor(private name:string) {
-//         this._initMain()
-//     }
-//     private _getTodosFromLS():void {
-//         this._todos = JSON.parse(localStorage.getItem(this.name)) || [{id:1, title:'wakeUP'}]
-//     }
-//     private _setTodosToLS():void {
-//         localStorage.setItem(this.name, JSON.stringify(this._todos))
-//         this._initTodos()
-//     }
-//     private _initMain():void {
-//         this._initForm()
-//         this._initTodos()
-//     }
-//
-//     private _initTodos():void {
-//         this._getTodosFromLS()
-//         const todosDiv = document.getElementById('todos') as HTMLDivElement;
-//         todosDiv.innerHTML = ''
-//         this._todos.forEach(todo => {
-//             const todoDiv = document.createElement('div');
-//             todoDiv.innerText = `${todo.id}) ${todo.title}`
-//             todosDiv.appendChild(todoDiv)
-//         })
-//     }
-//
-//     private _initForm():void {
-//         const form = document.forms['form'] as HTMLFormElement;
-//         form.onsubmit = (e) => {
-//             e.preventDefault()
-//             const input = e.target['title'] as HTMLInputElement;
-//             const id = this._todos.slice(-1)[0]?.id + 1 || 1;
-//             this._todos.push({id, title:input.value})
-//             this._setTodosToLS()
-//             form.reset()
-//         }
-//     }
-//
-// }
-//
-// new NoteBook('notebook1')
-//
-// interface ITodo {
-//     id:number;
-//     title:string
-// }
-//
-// class NoteBook {
-//     private _todos: ITodo[]
-//
-//     constructor(private name:string) {
-//         this._initMain()
-//     }
-//     private _getTodosFromLS():void {
-//         this._todos = JSON.parse(localStorage.getItem(this.name)) || []
-//     }
-//     private _setTodosToLS():void {
-//         localStorage.setItem(this.name, JSON.stringify(this._todos))
-//         this._initTodos()
-//     }
-//     private _initMain():void {
-//         this._initForm()
-//         this._initTodos()
-//     }
-//
-//     private _initTodos():void {
-//         this._getTodosFromLS()
-//         const todosDiv = document.getElementById('todos') as HTMLDivElement;
-//         todosDiv.innerHTML = ''
-//         this._todos.forEach(todo => {
-//             const todoDiv = document.createElement('div');
-//             todoDiv.innerText = `${todo.id}) ${todo.title}`
-//             todosDiv.appendChild(todoDiv)
-//         })
-//     }
-//
-//     private _initForm():void {
-//         const form = document.forms['form'] as HTMLFormElement;
-//         form.onsubmit = (e) => {
-//             e.preventDefault()
-//             const input = e.target['title'] as HTMLInputElement;
-//             const id = this._todos.slice(-1)[0]?.id + 1 || 1;
-//             this._todos.push({id, title:input.value})
-//             this._setTodosToLS()
-//             form.reset()
-//         }
-//     }
-//
-// }
-//
-// new NoteBook('notebook2')
+var NoteBook = /** @class */ (function () {
+    function NoteBook(name) {
+        this.name = name;
+        this._initMain();
+    }
+    NoteBook.prototype._getTodosFromLS = function () {
+        this._todos = JSON.parse(localStorage.getItem(this.name)) || [];
+    };
+    NoteBook.prototype._setTodosToLS = function () {
+        localStorage.setItem(this.name, JSON.stringify(this._todos));
+        this._initTodos();
+    };
+    NoteBook.prototype._initMain = function () {
+        this._initForm();
+        this._initTodos();
+    };
+    NoteBook.prototype._initTodos = function () {
+        this._getTodosFromLS();
+        var todosDiv = document.getElementById('todos');
+        todosDiv.innerHTML = '';
+        this._todos.forEach(function (todo) {
+            var todoDiv = document.createElement('div');
+            todoDiv.innerText = "".concat(todo.id, ") ").concat(todo.title);
+            todosDiv.appendChild(todoDiv);
+        });
+    };
+    NoteBook.prototype._initForm = function () {
+        var _this = this;
+        var form = document.forms['form'];
+        form.onsubmit = function (e) {
+            var _a;
+            e.preventDefault();
+            var input = e.target['title'];
+            var id = ((_a = _this._todos.slice(-1)[0]) === null || _a === void 0 ? void 0 : _a.id) + 1 || 1;
+            _this._todos.push({ id: id, title: input.value });
+            _this._setTodosToLS();
+            form.reset();
+        };
+    };
+    return NoteBook;
+}());
+new NoteBook('notebook2');
